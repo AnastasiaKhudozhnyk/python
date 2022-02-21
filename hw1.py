@@ -156,13 +156,32 @@ list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 
 # 4) переделать первое задание под меню с помощью цикла
 
-print("1. найти min число в листе")
-print("2. удалить все дубликаты в листе")
-print("3. заменить каждое четвертое значение на 'Х'")
-last_string = int(input('Сделайте свой выбор: '))
+while True:
+    print('1) найти min число в листе')
+    print('2) удалить все дубликаты в листе')
+    print("3) заменить каждое четвертое значение на 'Х'")
+    print('4) выход')
 
-for i in range(4):
-    if i == 1:
+    choice = input('Сделайте свой выбор: ')
+    print(list)
+
+    if choice == '1':
+        print(min(list))
+    elif choice == '2':
+        list_new = set(list)
+        print(list_new)
+    elif choice == '3':
+        list_new1 = []
+        for i in list:
+            if list.index(i) % 4 == 0:
+                list_new1.append('X')
+            else:
+                list_new1.append(i)
+
+        print(list_new1)
+    elif choice == '4':
+        break
+
 
 
 # ***  - вывести элемент листа, значение которого ближе всего к среднему арифметическому всех элементов этого же листа
